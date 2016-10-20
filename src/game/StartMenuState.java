@@ -24,7 +24,6 @@ public class StartMenuState extends BasicGameState {
     private TrueTypeFont playersOptionsTTF, creditsTTF;
     private int playersChoice, stateid;
     private Color notChosen = new Color(153, 204, 255);
-    private static final String[] credits = {"Credits", "Code and TiledMap: Miikka Merikanto, miikka.merikanto@businesscollege.fi", "Hero's images (CC3.0): cjc83486 from opengameart.com, http://opengameart.org/users/cjc83486", "CC3.0 reserved"};
 
     public StartMenuState(int id) {
         stateid = id;
@@ -38,9 +37,7 @@ public class StartMenuState extends BasicGameState {
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         menuFont = new Font("Verdana", Font.BOLD, 40);
-        creditsFont = new Font("Verdana", Font.PLAIN, 16);
         playersOptionsTTF = new TrueTypeFont(menuFont, true);
-        creditsTTF = new TrueTypeFont(creditsFont, true);
         playersOptions[0] = "Start";
         playersOptions[1] = "Quit";
     }
@@ -77,7 +74,6 @@ public class StartMenuState extends BasicGameState {
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         renderPlayersOptions();
-        renderCredits();
     }
 
     private void renderPlayersOptions() {
@@ -87,12 +83,6 @@ public class StartMenuState extends BasicGameState {
             } else {
                 playersOptionsTTF.drawString(100, i * 50 + 200, playersOptions[i], notChosen);
             }
-        }
-    }
-    
-    private void renderCredits() {
-        for (int i = 0; i < credits.length; i++) {
-            creditsTTF.drawString(100, i * 20 + 640, credits[i]);
         }
     }
 }
