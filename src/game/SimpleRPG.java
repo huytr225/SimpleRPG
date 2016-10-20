@@ -12,8 +12,8 @@ public class SimpleRPG extends StateBasedGame{
     public static final int STARTMENUSTATE = 0;
     public static final int GAMEPLAYSTATE = 1;
 
-    public static final int WIDTH = 1376;
-    public static final int HEIGHT = 768;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 640;
     public static final boolean FULLSCREEN = false;
 	
     public SimpleRPG (){
